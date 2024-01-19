@@ -1,0 +1,132 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("./static/Montserrat-Regular.ttf");
+}
+
+/*  default styles  */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  box-sizing: border-box;
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+/*  header styles  */
+
+.header {
+  background-image: url(./header-bg.jpg);
+  height: 95vh;
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  position: relative;
+  animation-name: bg-header;
+  animation-duration: 2s;
+}
+
+@keyframes bg-header {
+  0% {
+    opacity: 0;
+    clip-path: polygon(0 100%, 100% 0, 100% 0, 0 100%);
+    transform: scale(0.8);
+  }
+
+  80% {
+    background-image: linear-gradient(
+        45deg,
+        rgb(209, 89, 227),
+        rgb(234, 102, 131)
+      ),
+      url("./header-bg.jpg");
+    transform: scale(1.027);
+    background-blend-mode: color;
+  }
+}
+
+.logo-box {
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+}
+
+.logo {
+  height: 7rem;
+  animation: logo-anim 2s;
+}
+
+@keyframes logo-anim {
+  0% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.heading-primary-main {
+  font-weight: 400;
+  letter-spacing: 2.5rem;
+  font-size: 5rem;
+  display: block;
+  animation-name: moveLeft;
+  animation-duration: 2s;
+}
+
+@keyframes moveLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.43rem;
+  animation: moveRight 2s;
+}
+
+@keyframes moveRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.text-box {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}
